@@ -1,21 +1,111 @@
-<div class="navbar navbar-default navbar-fixed-top">
-  <ul class="nav navbar-nav navbar-right">
-    <li role="menuitem"><a class="dropdown-item" (click)="logout()">Logout</a></li>
-  </ul>
-</div>
+
+<app-navbar></app-navbar>
+<body>
+
 
 <div class="page-header"></div>
 
-<div class="container">
+  <div class="container">
 
-  <div class="row">
-    <div class="col-lg-8 col-md-7 col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading text-center">Our Awesome application</div>
-        <div class="panel-body" align="center">
-          Current User email: {{ currentUser.email }}
-        </div>
+<!--    <div class="row">-->
+<!--      <div class="col-lg-8 col-md-7 col-sm-6">-->
+<!--        <div class="panel panel-default">-->
+<!--          <div class="panel-heading text-center">Our Awesome application</div>-->
+<!--          <div class="panel-body" align="center">-->
+<!--            Current User email: {{ currentUser.email }}-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div class="row hello">
+      <div class="col-10">
+        <h1>Hello {{currentUser.name}}</h1>
+      </div>
+      <div class="col-2">
+        <img src="../../assets/images/user2.png">
       </div>
     </div>
+    <br>
+    <br>
+
+    <div class="row main-row justify-content-md-center" *ngIf="itemlist?.length">
+
+      <div class="list-group main-col col col-10 ">
+          <a  *ngFor="let item of itemlist" (click)="openSecondList(item)" data-toggle="collapse" href="#{{item.title}}"
+              role="button" aria-expanded="false"
+              aria-controls="collapseExample"
+              class="list-group-item list-group-item-action flex-column align-items-start item">
+
+              <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1 title">{{item.title}}</h5>
+                  <small class="dateCreated">{{item.dateCreated}}</small>
+              </div>
+
+              <p class="mb-1 description">{{item.description}}</p>
+
+              <small class="creator">By {{item.creator}}</small>
+
+              <div class="collapse" id="{{item.title}}">
+                <div class="card card-body">
+                    <div class="row mb-3">
+
+                      <a class="col">
+                        <button class=" btn btn-block btn-chat">
+                          <i class="fa fa-comment"></i>
+                          Open Chat
+                        </button>
+                      </a>
+                      <a class="col">
+                          <button class=" col btn btn-block btn-video">
+                          <i class="fa fa-video-camera"></i>
+                          Watch Video
+                        </button>
+                      </a>
+
+                    </div>
+                    <div class="row justify-content-center">
+                      <a class="col-centered">
+                        <button class="btn btn-outline-primary">Upload Video</button>
+                      </a>
+                    </div>
+                </div>
+              </div>
+          </a>
+
+
+      </div>
+
+    </div>
+
+    <div class="list-empty" *ngIf="!itemlist?.length">
+      ...Oops! Your List Seems Empty...
+    </div>
+
+    <div class="add-item">
+      <button class="btn" href="#newItem" data-toggle="collapse" >Add new item</button>
+    </div>
+
+    <div class="collapse" id="newItem">
+      <div class="card card-body">
+        <form #newItemForm = "ngForm">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="newItem.title" class="title form-control" name="tile" placeholder="Title">
+          </div>
+          <div class="form-group">
+            <textarea cols="40" [(ngModel)]="newItem.description" class="desription form-control" name="description" placeholder="Description"></textarea>
+          </div>
+          <div class="form-group">
+            <button class="video btn btn-outline-primary" >Upload Video</button>
+          </div>
+          <div class="form-group">
+            <button class="btn" (click)="addNewItem()" data-toggle="collapse" href="#newItem">Add item</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
   </div>
-</div>
+
+</body>

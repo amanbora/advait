@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~font-awesome/css/font-awesome.css';
+@import '~bootstrap-social/bootstrap-social.css';
+
+html, body {
+  min-height: 100vh;
+  height: auto;
+  margin-top: 56px;
+  background: linear-gradient( #ffefba, #ffffff);
+}
+
+.title{
+  color: red;
+}
+.dateCreated{
+  color: cadetblue;
+}
+.description{
+  color: burlywood
+}
+
+.creator{
+  color: darkgrey;
+}

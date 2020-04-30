@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 
+const HTTPS_URL = 'https://3b63b5fb.ngrok.io/';
 declare const FB: any;
 
 @Injectable({
@@ -24,8 +25,9 @@ export class UserService {
 
       FB.login(result => {
         if (result.authResponse) {
+          console.log(result.authResponse['accessToken']);
           return this.http
-            .post(`http://localhost:8000/users/auth/facebook`, {access_token: result.authResponse.accessToken})
+            .post(HTTPS_URL + `user/auth/facebook`, {access_token: result.authResponse['accessToken']})
             .toPromise()
             .then(response => {
               const token = response;
@@ -50,7 +52,7 @@ export class UserService {
 
   getCurrentUser() {
     return new Promise((resolve, reject) => {
-      return this.http.get(`http://localhost:8000/api/auth/me`).toPromise().then(response => {
+      return this.http.get(HTTPS_URL + `api/auth/me`).toPromise().then(response => {
         resolve(response);
       }).catch(() => reject());
     });

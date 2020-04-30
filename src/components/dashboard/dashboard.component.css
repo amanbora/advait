@@ -1,0 +1,43 @@
+
+.container{
+  min-height:100vh;
+}
+
+body,html{
+  height: 100%;
+  font-family: economica, sans-serif;
+  margin-bottom: 2em;
+}
+
+img{
+  width: 60%;
+}
+
+.item{
+  background: black;
+  border-bottom: 1px solid white;
+  margin-bottom: 1px;
+}
+.btn-chat, .btn-video{
+  width: fit-content;
+}
+
+.main-row{
+  justify-content: center;
+}
+.main-col{
+  padding: 0;
+}
+.hello{
+  align-items: center;
+}
+.list-empty{
+  text-align: center;
+}
+#newItem{
+  margin-top: 1em;
+}
+.add-item{
+  text-align: center;
+  margin-top: 2em;
+}

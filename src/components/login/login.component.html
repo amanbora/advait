@@ -1,15 +1,47 @@
+<body>
+
+<h1>Advait</h1>
 <div class="container">
   <div class="row">
     <div class="col-md-12 custom-card">
       <div class="card text-center">
 
+        <div class="login-form">
+          <form #loginForm = "ngForm">
+            <h2 class="text-center">Login</h2>
+            <div class="form-group has-error">
+              <input type="text" [(ngModel)]="user.username" class="form-control" name="username" placeholder="Username" required="required">
+            </div>
+            <div class="form-group">
+              <input type="password" [(ngModel)]="user.password" class="form-control" name="password" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+              <button type="submit" (click)="submit()" class="btn btn-primary btn-lg btn-block">Sign in</button>
+            </div>
+            <p><a href="#">Lost your Password?</a></p>
+          </form>
+          <p class="text-center small">Don't have an account? <a href="#">Sign up here!</a></p>
+        </div>
+
         <div class="card-body">
-          <h5 class="card-title">Log In With Facebook</h5>
-          <p class="card-text">Log in with your existing facebook account</p>
           <button class="btn btn-primary fb-btn" (click)="fbLogin()"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> Login With Facebook</button>
+        </div>
+        <div class="card-body row social">
+            <div>
+              <button class=" btn btn-social btn-google">
+                <i class="fa fa-google fa-2x"></i>
+              </button>
+            </div>
+            <div>
+              <button class=" col btn btn-block btn-otp">
+                <i class="fa fa-phone"></i>
+                Sign in with Otp
+              </button>
+            </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
+
+</body>

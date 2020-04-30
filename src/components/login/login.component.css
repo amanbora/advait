@@ -1,0 +1,31 @@
+body,html{
+  font-family: economica, sans-serif;
+}
+h1{
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1em;
+}
+.container{
+  margin-top: 2em;
+}
+.login-form {
+  width: 350px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.btn-google{
+  height: 2.2em;
+  width: 2em;
+  margin-right: 5px;
+}
+.btn-otp{
+  width: fit-content;
+}
+.social{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
