@@ -16,6 +16,9 @@
     "express-jwt": "^5.3.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.10",
-    "passport": "^0.4.1"
+    "ngrok": "^3.2.7",
+    "nodemon": "^2.0.3",
+    "passport": "^0.4.1",
+    "passport-facebook-token": "^3.3.0"
   }
 }
