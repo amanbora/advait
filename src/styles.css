@@ -6,14 +6,13 @@ html, body {
   min-height: 100vh;
   height: auto;
   margin-top: 56px;
-  background: linear-gradient( #ffefba, #ffffff);
 }
 
 .title{
   color: red;
 }
 .dateCreated{
-  color: cadetblue;
+  color: #61f2f7;
 }
 .description{
   color: burlywood
