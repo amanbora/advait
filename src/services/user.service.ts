@@ -44,6 +44,10 @@ export class UserService {
     });
   }
 
+  normalLogin(user){
+    return true;
+  }
+
   isLoggedIn() {
     return new Promise((resolve, reject) => {
       this.getCurrentUser().then(user => resolve(true)).catch(() => reject(false));

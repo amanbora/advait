@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
   }
 
   submit(){
-    this.userService.normalLogin(this.user).then(()=>{
+    if (this.userService.normalLogin(this.user)){
       console.log('Normal Login called');
       this.router.navigate(['dashboard']);
-    });
+    }
   }
 
 }
