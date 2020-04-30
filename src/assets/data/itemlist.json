@@ -1,0 +1,24 @@
+{
+  "items": [
+
+    {
+      "description": "Netfilx Series",
+      "dateCreated": "2 days ago",
+      "creator": "Aman",
+      "title": "Stranger Things"
+    },
+    {
+      "description": "Amazon Series",
+      "dateCreated": "3 days ago",
+      "creator": "Aman",
+      "title": "Dangerous Beings"
+    },
+    {
+      "description": "Netfilx Series",
+      "dateCreated": "Now",
+      "creator": "Aman",
+      "title": "Designated Prime Minister"
+    }
+
+  ]
+}
