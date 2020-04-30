@@ -12,7 +12,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {
     FB.init({
-      appId :  '940414166391366',
+      appId :  'FACEBOOK_APP_ID',
       status : false,
       cookie : false,
       xfbml  : false,
